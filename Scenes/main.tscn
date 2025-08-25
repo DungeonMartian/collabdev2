@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://57e1m1qmfecs"]
+[gd_scene load_steps=16 format=3 uid="uid://57e1m1qmfecs"]
 
 [ext_resource type="Script" uid="uid://cgqobh3qfv48e" path="res://Scenes/character_body_3d.gd" id="1_jjgbg"]
+[ext_resource type="Shader" uid="uid://djds6rv28bim4" path="res://assets/shaders/wiggle.gdshader" id="2_bo1nx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,6 +16,11 @@ sky = SubResource("Sky_jjgbg")
 tonemap_mode = 2
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8gbba"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gbba"]
+shader = ExtResource("2_bo1nx")
+shader_parameter/Strength = 5.0
+shader_parameter/RandomOffset = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjgbg"]
 
@@ -56,6 +62,14 @@ mesh = SubResource("CapsuleMesh_8gbba")
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5063, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody3D/Camera3D"]
+material = SubResource("ShaderMaterial_8gbba")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_jjgbg")
