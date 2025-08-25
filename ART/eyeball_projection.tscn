@@ -1,0 +1,30 @@
+<<<<<<< Updated upstream
+[gd_scene load_steps=2 format=3 uid="uid://b4268r37uowrm"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qkmc4"]
+
+[node name="EyeballProjection" type="Node3D"]
+
+[node name="Placeholder" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_qkmc4")
+=======
+[gd_scene load_steps=3 format=3 uid="uid://tjylnblvxjn6"]
+
+[ext_resource type="PackedScene" uid="uid://3il7io1ishl6" path="res://ART/Modular Sewers.blend" id="1_i0t7x"]
+
+[sub_resource type="Environment" id="Environment_qkmc4"]
+
+[node name="EyeballProjection" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6199)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qkmc4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.81252)
+light_energy = 3.101
+
+[node name="Modular Sewers" parent="." instance=ExtResource("1_i0t7x")]
+>>>>>>> Stashed changes
