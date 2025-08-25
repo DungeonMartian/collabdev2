@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://4br7n1u8e7hj"]
+
+[ext_resource type="Script" uid="uid://dlgbne6tomug3" path="res://Scripts/debug_ui.gd" id="1_aqnpe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjgbg"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="DebugUI" type="CanvasLayer"]
+script = ExtResource("1_aqnpe")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Debug_DangerLevel" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_right = 755
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Debug_DangerLevel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjgbg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Debug_DangerLevel"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Debug_DangerLevel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 31
+text = "Danger Level"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Debug_DangerLevel/VBoxContainer"]
+layout_mode = 2
+max_value = 4.0
+step = 1.0
+
+[node name="Debug_DangerPercent2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_right = 755
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Debug_DangerPercent2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjgbg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Debug_DangerPercent2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Debug_DangerPercent2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 31
+text = "Danger %"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Debug_DangerPercent2/VBoxContainer"]
+layout_mode = 2
+step = 1.0

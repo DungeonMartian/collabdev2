@@ -35,6 +35,8 @@ func _notification(what: int):
 		ignore_mouse = true
 
 func _input(event: InputEvent) -> void:
+	if Player.ref == null:
+		return
 	if event is InputEventMouseMotion or event is InputEventScreenDrag:
 		if mouse_inside_window:
 			last_known_mouse_pos = event.position
