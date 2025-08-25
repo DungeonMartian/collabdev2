@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3c5nilknqmsm"]
+
+[ext_resource type="Script" uid="uid://lvrw27h16xf8" path="res://Scripts/ghost_manager.gd" id="1_gvm8i"]
+
+[node name="GhostManager" type="Node"]
+script = ExtResource("1_gvm8i")
