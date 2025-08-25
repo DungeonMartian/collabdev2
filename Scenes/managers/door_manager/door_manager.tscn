@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://syelhawtgjf"]
+
+[ext_resource type="Script" uid="uid://cvrabdceo1h6g" path="res://Scripts/door_manager.gd" id="1_aypm7"]
+
+[node name="DoorManager" type="Node"]
+script = ExtResource("1_aypm7")

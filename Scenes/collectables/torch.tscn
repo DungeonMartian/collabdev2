@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xcg1h7hda3c5"]
+
+[ext_resource type="Script" uid="uid://cxlcdeghxg3ad" path="res://Scripts/torch.gd" id="1_cpe0b"]
+
+[node name="Torch" type="Area3D"]
+script = ExtResource("1_cpe0b")

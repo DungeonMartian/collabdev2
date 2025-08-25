@@ -11,6 +11,4 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		# run the helper function to reduce the players speed
 		if _is_deep_water:
-			# run the helper function to extinguish torch
-			pass
-		pass
+			GhostManager.ref.lose_torch()

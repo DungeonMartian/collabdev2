@@ -1,6 +1,11 @@
 ##The manager for ghost related events 
 class_name GhostManager extends Node
 
+static var ref : GhostManager 
+
+func _init() -> void: 
+	ref = self
+
 ## the current danger level
 var _danger_level : int = 0:
 	get:

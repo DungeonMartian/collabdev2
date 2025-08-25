@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hf3b7h17my5k"]
+
+[ext_resource type="Script" uid="uid://bnpvpobugi8ol" path="res://Scripts/base_collectable.gd" id="1_yfjqt"]
+
+[node name="BaseCollectable" type="Area3D"]
+script = ExtResource("1_yfjqt")
