@@ -19,10 +19,10 @@ var last_known_mouse_pos: Vector2 = Vector2.ZERO
 var ignore_mouse: bool = false
 
 func _ready() -> void:
-	#set_process_mode(Node.PROCESawpS_MODE_ALWAYS)
+	#set_process_mode(Node.PROCESS_MODE_ALWAYS)
 	get_viewport().set_input_as_handled()
 	
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_update_viewport_center()
 	get_viewport().size_changed.connect(_update_viewport_center)
 	
