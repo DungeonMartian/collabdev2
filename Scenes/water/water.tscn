@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmfj6c3hxg83v"]
+
+[ext_resource type="Script" uid="uid://crb5fcjjxu83w" path="res://Scripts/water.gd" id="1_vr57q"]
+
+[node name="Water" type="Area3D"]
+script = ExtResource("1_vr57q")
