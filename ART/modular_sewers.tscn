@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://clu4hmwr8rwwt"]
+
+[ext_resource type="PackedScene" uid="uid://ci2iqo0ke22it" path="res://ART/Modular Sewers.blend" id="1_2gk1t"]
+[ext_resource type="Texture2D" uid="uid://bm41bk52g7oqv" path="res://ART/textures/Untitled.png" id="2_dnpln"]
+[ext_resource type="Shader" uid="uid://d4iiwnxiaxjy5" path="res://ART/shaders/modular_sewers.gdshader" id="2_l8c73"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dnpln"]
+render_priority = 0
+shader = ExtResource("2_l8c73")
+shader_parameter/base_albedo = ExtResource("2_dnpln")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcyyk"]
+render_priority = 0
+shader = ExtResource("2_l8c73")
+shader_parameter/base_albedo = ExtResource("2_dnpln")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8c73"]
+render_priority = 0
+shader = ExtResource("2_l8c73")
+shader_parameter/base_albedo = ExtResource("2_dnpln")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bex55"]
+render_priority = 0
+shader = ExtResource("2_l8c73")
+shader_parameter/base_albedo = ExtResource("2_dnpln")
+
+[node name="Modular Sewers" instance=ExtResource("1_2gk1t")]
+
+[node name="SewerTurn" parent="." index="0"]
+material_override = SubResource("ShaderMaterial_dnpln")
+
+[node name="SewerStraight" parent="." index="1"]
+material_override = SubResource("ShaderMaterial_xcyyk")
+
+[node name="SewerCap" parent="." index="2"]
+material_override = SubResource("ShaderMaterial_l8c73")
+
+[node name="SewerStraight_001" parent="." index="3"]
+material_override = SubResource("ShaderMaterial_bex55")
