@@ -2,7 +2,6 @@ class_name Player extends CharacterBody3D
 
 static var ref: CharacterBody3D
 
-
 var waiting: bool = false
 
 @onready var camera: Camera3D = %Camera3D
@@ -10,10 +9,10 @@ var waiting: bool = false
 const SPEED: float = 15.
 const JUMP_VELOCITY: float = 4.5
 
-const ROTATE_FACTOR: float = 50.
+const ROTATE_FACTOR: float = 4.
 const ROTATE_SPEED: float = 1.
 const ROTATE_CLAMP: float = 1.5
-const ROTATE_VERTICAL_CLAMP: float = .65
+const ROTATE_VERTICAL_CLAMP: float = 1.5
 
 var is_fishing: bool = false
 var game_over: bool = false
@@ -62,11 +61,13 @@ func _handle_movement(delta:float) -> void:
 			move_and_slide()
 
 func rotate_player(mouse_pos:Vector2) -> void:
-	var vertical_rotation_deg: float = deg_to_rad(-mouse_pos.y * ROTATE_SPEED/4.)
-	var horizontal_rotation_deg: float = deg_to_rad(-mouse_pos.x * ROTATE_SPEED/4.)
+	var vertical_rotation_deg: float = deg_to_rad(-mouse_pos.y * ROTATE_SPEED/ROTATE_FACTOR)
+	var horizontal_rotation_deg: float = deg_to_rad(-mouse_pos.x * ROTATE_SPEED/ROTATE_FACTOR)
 	
 	var horiz_rotation: float = global_rotation.y + horizontal_rotation_deg
 	global_rotation.y = lerp(global_rotation.y,horiz_rotation,1.)
 	
 	var vert_rotation: float = camera.global_rotation.x + vertical_rotation_deg
-	camera.global_rotation.x = lerp(camera.global_rotation.x,vert_rotation,1.)
+	var vert_clamped: float = clamp(vert_rotation,-ROTATE_VERTICAL_CLAMP,ROTATE_VERTICAL_CLAMP)
+	
+	camera.global_rotation.x = lerp(camera.global_rotation.x,vert_clamped,1.)
