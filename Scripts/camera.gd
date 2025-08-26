@@ -23,7 +23,7 @@ var _shake_intensity : float = 0.
 
 func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
-	start_evil_lens()
+	#start_evil_lens()
 
 func shake_screen(intensity : float, duration : float) -> void:
 	_should_shake = true
