@@ -9,3 +9,9 @@ func start_lens() -> void:
 	var tween = create_tween()
 	tween.set_trans(tween.TRANS_SPRING) 
 	tween.tween_property(shader_material, "shader_parameter/strength", 40.0, 4.0)
+
+func reset_lens() ->void:
+	var tween = create_tween()
+	tween.set_trans(tween.TRANS_SPRING) 
+	tween.tween_property(shader_material, "shader_parameter/strength", 0.0, 1.0)
+	pass

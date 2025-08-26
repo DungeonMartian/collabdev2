@@ -28,66 +28,82 @@ script = ExtResource("1_k001h")
 stream = ExtResource("2_hf4c4")
 volume_db = 5.0
 autoplay = true
+bus = &"Music"
 
 [node name="Level1" type="AudioStreamPlayer" parent="IAB_songs"]
 stream = ExtResource("3_oj3ls")
 volume_db = -50.0
+bus = &"Music"
 
 [node name="Level2" type="AudioStreamPlayer" parent="IAB_songs"]
 stream = ExtResource("4_5a7yh")
 volume_db = -50.0
+bus = &"Music"
 
 [node name="Level3" type="AudioStreamPlayer" parent="IAB_songs"]
 stream = ExtResource("5_i2se7")
 volume_db = -50.0
+bus = &"Music"
 
 [node name="Level4" type="AudioStreamPlayer" parent="IAB_songs"]
 stream = ExtResource("6_4u86m")
 volume_db = -50.0
+bus = &"Music"
 
 [node name="thriller_ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_oj3ls")
 volume_db = -8.0
 autoplay = true
+bus = &"Music"
 
 [node name="HorrorSounds" type="Node" parent="."]
 
 [node name="RatSqueak" type="AudioStreamPlayer3D" parent="HorrorSounds"]
 stream = ExtResource("8_i2se7")
+bus = &"Sfx"
 
 [node name="MetalHinge" type="AudioStreamPlayer3D" parent="HorrorSounds"]
 stream = ExtResource("9_4u86m")
 pitch_scale = 0.95
+bus = &"Sfx"
 
 [node name="MetalGroan" type="AudioStreamPlayer3D" parent="HorrorSounds"]
 stream = ExtResource("10_4u86m")
 volume_db = 5.0
 pitch_scale = 0.95
+bus = &"Sfx"
 
 [node name="Splat" type="AudioStreamPlayer3D" parent="HorrorSounds"]
 stream = ExtResource("11_blvto")
 volume_db = 5.0
+bus = &"Sfx"
 
 [node name="SplashNearby" type="AudioStreamPlayer3D" parent="HorrorSounds"]
 stream = ExtResource("12_cndk6")
 volume_db = 2.0
+bus = &"Sfx"
 
 [node name="MonsterSounds" type="Node" parent="."]
 
 [node name="MonsterSound1" type="AudioStreamPlayer3D" parent="MonsterSounds"]
 stream = ExtResource("13_ofdmi")
+bus = &"Sfx"
 
 [node name="MonsterSound2" type="AudioStreamPlayer3D" parent="MonsterSounds"]
 stream = ExtResource("14_60hon")
+bus = &"Sfx"
 
 [node name="MonsterSound3" type="AudioStreamPlayer3D" parent="MonsterSounds"]
 stream = ExtResource("15_134ym")
+bus = &"Sfx"
 
 [node name="MonsterSound4" type="AudioStreamPlayer3D" parent="MonsterSounds"]
 stream = ExtResource("16_tdwrf")
+bus = &"Sfx"
 
 [node name="MonsterSound5" type="AudioStreamPlayer3D" parent="MonsterSounds"]
 stream = ExtResource("17_cvtmy")
+bus = &"Sfx"
 
 [node name="SafeSound" type="Node" parent="."]
 
@@ -95,3 +111,4 @@ stream = ExtResource("17_cvtmy")
 stream = ExtResource("18_60hon")
 volume_db = 5.0
 pitch_scale = 1.5
+bus = &"Sfx"

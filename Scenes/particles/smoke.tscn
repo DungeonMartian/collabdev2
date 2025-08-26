@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciscxj4shur4r"]
+
+[ext_resource type="SphereMesh" uid="uid://dm6w3wpplv8rh" path="res://Scenes/particles/materials/smoke_material.tres" id="1_hq4tn"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jk6ae"]
+emission_shape_scale = Vector3(0.5, 1, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(-90, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+spread = 12.761
+initial_velocity_min = 0.3
+initial_velocity_max = 0.76
+gravity = Vector3(0, 0.5, 0)
+
+[node name="Smoke" type="GPUParticles3D"]
+amount = 32
+lifetime = 3.0
+randomness = 0.19
+process_material = SubResource("ParticleProcessMaterial_jk6ae")
+draw_pass_1 = ExtResource("1_hq4tn")

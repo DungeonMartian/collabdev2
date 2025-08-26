@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-[gd_scene load_steps=0 format=3 uid="uid://dfnaitcroj843"]
-=======
-[gd_scene format=3 uid="uid://dfnaitcroj843"]
->>>>>>> dc4870f9ef5bb9440bd300ff13413a83091758e0
-
-[node name="TunnelsLevel" type="Node3D"]
