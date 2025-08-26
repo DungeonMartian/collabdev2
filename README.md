@@ -1,6 +1,60 @@
 # collabdev2
 Live HyperGameDev collab Number 2! With DungeonMartian and Rogi's Tutorials
 
+
+<li>Keys</li>
+<ul><li>Be collectable</li>
+	<li>Need a final visual representation</li>
+	<li>Needs Testing: Add up to the req amount to open the door</li>
+	<li>Be added in scene and tested</li>
+</ul>
+<li>Door</li>
+<ul><li>Needs a visual representation</li>
+	<li>Needs Testing: Ensure door cannot open if req keys unmet</li>
+	<li>The door somehow indicates keys are needed?</li>
+	<li>Needs Testing: Ensure door does open if req keys met</li>
+	<li>Walking through an open door, ends the game satisfyingly</li>
+</ul>
+
+<li>Torches</li>
+<ul>
+	<li>Needs a visual representation</li>
+ 	<li>Collectable (1 at time?)</li>
+	<ul>
+		Can the player hold it once collected?
+</ul>
+  	<li>Fuel tracking needs to be present</li>
+   <li>Needs to get removed when fuel is empty</li>
+	<li>Needs Testing: Does having one actually stop/reduce danger%</li>
+</ul>
+
+<li>Monster</li>
+<ul>
+	<li>Needs to be tested inscene </li>
+	<li>Does it dis/appear gradually based on danger level?</li>
+	<li>Do the animations work right and stuff?</li>
+	<li>Does the player "lose" when it's too close (danger too high)?</li>
+	<li>How is game over communicated and handled (reset etc)</li>
+</ul>
+
+<li>Music</li>
+<ul><li>Is it properly managed?</li>
+	<li>Is audio controllable by menu?</li>
+	<li>Does the music change based on Danger level?</li>
+</ul>
+
+<li>SFX</li>
+<ul>
+	<li>Are they managed</li>
+	<li>Do the important ones fire when they should?</li>
+</ul>
+
+<li>VFX</li>
+<ul>
+	<li>Do tunnel eyes increase/become visible as danger increases?</li>
+	<li>Are desired visual shader effects also dialed into danger?</li>
+</ul>
+
 <li>Level Design - Lyz at minimum
 <li>Torch Design + Mechanics></li>
 <li>Monster stat + mechanics/side effects - Dungeon</li>
