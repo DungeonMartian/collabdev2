@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8gbba"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjgbg"]
+radius = 0.25
+height = 1.0
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_cvnsp")
@@ -18,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 unique_name_in_owner = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_8gbba")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

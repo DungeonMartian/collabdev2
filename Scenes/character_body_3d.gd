@@ -3,7 +3,7 @@ class_name Player extends CharacterBody3D
 static var ref: CharacterBody3D
 
 const SPEED: float = 15.
-const JUMP_VELOCITY: float = 4.5
+const JUMP_VELOCITY: float = 6.5
 
 const ROTATE_FACTOR: float = 4.
 const ROTATE_SPEED: float = 1.

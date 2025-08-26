@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://di561li87j6t6"]
 
 [ext_resource type="Shader" uid="uid://cda2uvvkaa2ie" path="res://assets/shaders/chromatic_abberation.gdshader" id="1_memex"]
-[ext_resource type="Script" uid="uid://cw1th18qqssjg" path="res://Scripts/chromatic_abberation.gd" id="2_hj0vn"]
+[ext_resource type="Script" path="res://Scripts/chromatic_abberation.gd" id="2_hj0vn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_x3vey"]
 
