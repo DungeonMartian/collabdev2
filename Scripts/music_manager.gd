@@ -12,6 +12,8 @@ class_name MusicManager
 @onready var splat: AudioStreamPlayer3D = $HorrorSounds/Splat
 @onready var splash_nearby: AudioStreamPlayer3D = $HorrorSounds/SplashNearby
 
+@onready var safe_chime: AudioStreamPlayer = $SafeSound/SafeChime
+
 @onready var horror_array : Array = [
 	rat_squeak,
 	metal_hinge,
@@ -48,6 +50,7 @@ func _on_danger_level_changed(level : int) -> void:
 		t.parallel().tween_property(level_2, "volume_db", -50, 1)
 		t.parallel().tween_property(level_3, "volume_db", -50, 1)
 		t.parallel().tween_property(level_4, "volume_db", -50, 1)
+		safe_chime.play()
 		return
 	
 	if level >0:

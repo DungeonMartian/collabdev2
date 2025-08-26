@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccyi73bmkcmqu"]
+[gd_scene load_steps=19 format=3 uid="uid://ccyi73bmkcmqu"]
 
 [ext_resource type="Script" uid="uid://dy0nj0fxw4lw" path="res://Scripts/music_manager.gd" id="1_k001h"]
 [ext_resource type="AudioStream" uid="uid://cmrmh7oefuuwb" path="res://assets/music/Level0Ambiance.mp3" id="2_hf4c4"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bx1hwxxranmq1" path="res://assets/sfx/Monster3Redone.mp3" id="15_134ym"]
 [ext_resource type="AudioStream" uid="uid://csy33nm8iaxof" path="res://assets/sfx/Monster4Redone.mp3" id="16_tdwrf"]
 [ext_resource type="AudioStream" uid="uid://bpex4b2rdk8ku" path="res://assets/sfx/Monster5Redone.mp3" id="17_cvtmy"]
+[ext_resource type="AudioStream" uid="uid://bca6mivtt0c6q" path="res://assets/sfx/store-entrance-bell-188054.mp3" id="18_60hon"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_k001h")
@@ -87,3 +88,10 @@ stream = ExtResource("16_tdwrf")
 
 [node name="MonsterSound5" type="AudioStreamPlayer3D" parent="MonsterSounds"]
 stream = ExtResource("17_cvtmy")
+
+[node name="SafeSound" type="Node" parent="."]
+
+[node name="SafeChime" type="AudioStreamPlayer" parent="SafeSound"]
+stream = ExtResource("18_60hon")
+volume_db = 5.0
+pitch_scale = 1.5
