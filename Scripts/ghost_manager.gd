@@ -38,6 +38,9 @@ var _danger_increase_rate : float = 10
 
 func get_danger_percentage() -> float:
 	return _danger_percentage
+	
+func set_danger_percentage(percent: float) -> void:
+	_danger_percentage = percent
 
 ## used to set danger val to a specific value. can be called by ghost encounters, or by getting key
 func set_danger_level(level : int) -> void:

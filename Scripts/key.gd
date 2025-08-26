@@ -9,6 +9,9 @@ extends BaseCollectable
 		_key_num = val
 
 func do_pickup_action() -> void:
-	DoorManager.ref.unlock_door()
+	KeyManager.ref.key_count += 1
+	GhostManager.ref.set_danger_level(0)
+	GhostManager.ref.set_danger_percentage(0)
+	#DoorManager.ref.unlock_door()
 	# TODO an animation
 	queue_free()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgaymsx8kbb4d"]
 
 [ext_resource type="Script" uid="uid://cgqobh3qfv48e" path="res://Scenes/character_body_3d.gd" id="1_cvnsp"]
-[ext_resource type="PackedScene" uid="uid://c4yuqq2ibl2jo" path="res://Scenes/camera.tscn" id="2_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://bkw50ji40dmgx" path="res://Scenes/camera.tscn" id="2_cvnsp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8gbba"]
 
