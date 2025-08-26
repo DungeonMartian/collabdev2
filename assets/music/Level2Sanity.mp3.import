@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Level2Sanity.mp3-598a5a7350cc3a816f8ca411ffba
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
