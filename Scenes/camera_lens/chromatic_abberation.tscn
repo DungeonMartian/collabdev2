@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://di561li87j6t6"]
+
+[ext_resource type="Shader" uid="uid://cda2uvvkaa2ie" path="res://assets/shaders/chromatic_abberation.gdshader" id="1_memex"]
+[ext_resource type="Script" uid="uid://cw1th18qqssjg" path="res://Scripts/chromatic_abberation.gd" id="2_hj0vn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x3vey"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pqp4w"]
+noise = SubResource("FastNoiseLite_x3vey")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o1f6"]
+shader = ExtResource("1_memex")
+shader_parameter/offset_image = SubResource("NoiseTexture2D_pqp4w")
+shader_parameter/strength = 0.0
+
+[node name="chromatic_abberation" type="ColorRect"]
+material = SubResource("ShaderMaterial_7o1f6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hj0vn")

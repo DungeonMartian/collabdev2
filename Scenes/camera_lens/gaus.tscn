@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh7uuhulwimqs"]
+
+[ext_resource type="Shader" uid="uid://bkfl6juqq75fr" path="res://assets/shaders/gaus_blur.gdshader" id="1_hwfqo"]
+[ext_resource type="Script" uid="uid://duph2kjcjkl6e" path="res://Scripts/gaus.gd" id="2_4vphc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c66t7"]
+shader = ExtResource("1_hwfqo")
+shader_parameter/blur_radius = 6
+shader_parameter/blur_scale = 8.392
+shader_parameter/darkness = 3.821
+shader_parameter/fade_direction = 2
+shader_parameter/fade_cutoff = 0.508
+shader_parameter/fade_intensity = 2.127
+
+[node name="gaus" type="ColorRect"]
+material = SubResource("ShaderMaterial_c66t7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4vphc")
