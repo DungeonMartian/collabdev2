@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bk8ipojq0ldp" path="res://Scenes/camera_lens/vignette.tscn" id="6_3he0p"]
 
 [sub_resource type="Gradient" id="Gradient_mhsga"]
-offsets = PackedFloat32Array(0, 0.614754, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.713726, 0.945098, 1, 0.419608, 0.203922, 0.792157, 1)
+offsets = PackedFloat32Array(0, 0.532787, 1)
+colors = PackedColorArray(0.0378475, 0.193314, 0.177253, 1, 0.419608, 0.917647, 0.411765, 1, 0.25098, 0.14902, 0.0509804, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_gpm26"]
 resource_local_to_scene = true
@@ -22,6 +22,7 @@ shader_parameter/pixel = 1.0
 shader_parameter/pallete = SubResource("GradientTexture1D_gpm26")
 
 [node name="Camera3D" type="Camera3D"]
+fov = 90.0
 script = ExtResource("1_f1cf7")
 
 [node name="chromatic_abberation" parent="." instance=ExtResource("2_pqp4w")]
@@ -31,7 +32,6 @@ visible = false
 visible = false
 
 [node name="grain_pp" parent="." instance=ExtResource("4_c66t7")]
-visible = false
 material = SubResource("ShaderMaterial_3uemn")
 
 [node name="vignette" parent="." instance=ExtResource("6_3he0p")]

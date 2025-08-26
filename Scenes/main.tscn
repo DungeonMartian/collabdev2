@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager/ghost_manager.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dgaymsx8kbb4d" path="res://Scenes/player.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://4br7n1u8e7hj" path="res://Scenes/debug_ui.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dviyspqveoo3y" path="res://Scenes/debug_ui.tscn" id="2_bo1nx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -12,9 +12,19 @@ ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 sky_material = SubResource("ProceduralSkyMaterial_7u77a")
 
 [sub_resource type="Environment" id="Environment_bo1nx"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.0105, 0.03, 0, 1)
 sky = SubResource("Sky_jjgbg")
-tonemap_mode = 2
+ambient_light_color = Color(0, 0.329412, 0, 1)
+tonemap_mode = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0712705, 0.205874, 0.100717, 1)
+fog_light_energy = 0.32
+fog_sun_scatter = 0.57
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 80.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jjvhh"]
 
@@ -42,8 +52,7 @@ albedo_texture = SubResource("NoiseTexture2D_ynf5e")
 environment = SubResource("Environment_bo1nx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_energy = 0.1
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.177578, 0.201037, 0.963354, -0.467404, 0.878683, -0.0972092, 0, 3.71693, -0.857362)
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_jjgbg")]
