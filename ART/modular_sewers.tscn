@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://clu4hmwr8rwwt"]
+[gd_scene load_steps=6 format=3 uid="uid://clu4hmwr8rwwt"]
 
 [ext_resource type="PackedScene" uid="uid://ci2iqo0ke22it" path="res://ART/Modular Sewers.blend" id="1_2gk1t"]
 [ext_resource type="Script" uid="uid://cegxwr3xl20yf" path="res://ART/modular_sewers.gd" id="2_ab61e"]
-[ext_resource type="Shader" uid="uid://d4iiwnxiaxjy5" path="res://ART/shaders/modular_sewers.gdshader" id="2_l8c73"]
 [ext_resource type="Material" uid="uid://7qdywpyhoed8" path="res://ART/materials/modular_sewers.tres" id="3_2rgg1"]
 [ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager/ghost_manager.tscn" id="10_2rgg1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8c73"]
-render_priority = 0
-shader = ExtResource("2_l8c73")
-shader_parameter/danger_level = 0.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xcyyk"]
+height = 1.29199
+radius = 2.86377
 
 [node name="Modular Sewers" instance=ExtResource("1_2gk1t")]
 script = ExtResource("2_ab61e")
@@ -17,16 +15,28 @@ script = ExtResource("2_ab61e")
 [node name="SewerTurn" parent="." index="0"]
 material_override = ExtResource("3_2rgg1")
 
+[node name="TurnCollision " parent="SewerTurn" index="0"]
+mesh = null
+
 [node name="SewerStraight" parent="." index="1"]
 material_override = ExtResource("3_2rgg1")
 
-[node name="SewerCap" parent="." index="2"]
-material_override = SubResource("ShaderMaterial_l8c73")
+[node name="StraightCollision " parent="SewerStraight" index="0"]
+mesh = null
 
-[node name="SewerStraight_001" parent="." index="3"]
+[node name="SewerCap" parent="." index="2"]
 material_override = ExtResource("3_2rgg1")
 
-[node name="GhostManager" parent="." index="4" instance=ExtResource("10_2rgg1")]
+[node name="StaticBody3D" type="StaticBody3D" parent="SewerCap" index="0"]
 
-[node name="TCollision " parent="." index="5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SewerCap/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161848, -0.18119, -0.00359535)
+shape = SubResource("CylinderShape3D_xcyyk")
+
+[node name="SewerT_001" parent="." index="3"]
+material_override = ExtResource("3_2rgg1")
+
+[node name="TCollision " parent="SewerT_001" index="1"]
 mesh = null
+
+[node name="GhostManager" parent="." index="4" instance=ExtResource("10_2rgg1")]
