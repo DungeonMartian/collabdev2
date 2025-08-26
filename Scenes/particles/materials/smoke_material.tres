@@ -1,0 +1,11 @@
+[gd_resource type="SphereMesh" load_steps=2 format=3 uid="uid://dm6w3wpplv8rh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hq4tn"]
+albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
+metallic = 0.39
+metallic_specular = 0.0
+
+[resource]
+material = SubResource("StandardMaterial3D_hq4tn")
+radius = 0.25
+height = 0.5

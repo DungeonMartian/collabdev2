@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuewprtqk0amm"]
+
+[ext_resource type="Material" uid="uid://cmhyg8ob4qqoi" path="res://Scenes/particles/materials/bubbles_procesmaterials.tres" id="1_xh4u6"]
+[ext_resource type="SphereMesh" uid="uid://dhrhts6qjdfqk" path="res://Scenes/particles/materials/bubbles_material.tres" id="2_wt87f"]
+
+[node name="Bubbles" type="GPUParticles3D"]
+amount = 32
+explosiveness = 0.25
+randomness = 0.39
+process_material = ExtResource("1_xh4u6")
+draw_pass_1 = ExtResource("2_wt87f")
