@@ -1,0 +1,177 @@
+[gd_scene load_steps=29 format=3 uid="uid://btlsyqis3ila"]
+
+[ext_resource type="PackedScene" uid="uid://byyfeh6gvyjqk" path="res://Scenes/monster/monster.tscn" id="1_rb0md"]
+[ext_resource type="PackedScene" uid="uid://ccyi73bmkcmqu" path="res://Scenes/managers/music_manager.tscn" id="2_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://dno1spmxecgxg" path="res://Scenes/managers/KeyManager.tscn" id="3_hwvp3"]
+[ext_resource type="PackedScene" uid="uid://syelhawtgjf" path="res://Scenes/managers/door_manager.tscn" id="4_afv7b"]
+[ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager.tscn" id="5_7r2dd"]
+[ext_resource type="PackedScene" uid="uid://dok4vbtgbdle4" path="res://Scenes/managers/torch_manager.tscn" id="6_k2mw1"]
+[ext_resource type="PackedScene" uid="uid://dgaymsx8kbb4d" path="res://Scenes/player.tscn" id="7_tjl6l"]
+[ext_resource type="PackedScene" uid="uid://doh2y2no8wlva" path="res://Scenes/door/door.tscn" id="8_3628d"]
+[ext_resource type="Script" uid="uid://crgnemj3hygw" path="res://Scripts/ceiling.gd" id="8_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://dviyspqveoo3y" path="res://Scenes/debug_ui.tscn" id="9_irw6p"]
+[ext_resource type="PackedScene" uid="uid://dtw0w5r0lrst" path="res://Scenes/level_pieces/sewer_straight.tscn" id="11_hwvp3"]
+[ext_resource type="PackedScene" uid="uid://c43ty2buebilt" path="res://Scenes/level_pieces/sewer_cap.tscn" id="12_afv7b"]
+[ext_resource type="PackedScene" uid="uid://o7he7yjeq6t0" path="res://Scenes/level_pieces/sewer_turn.tscn" id="13_k2mw1"]
+[ext_resource type="PackedScene" uid="uid://jtaskq2shs0b" path="res://Scenes/level_pieces/big_area.tscn" id="14_tjl6l"]
+[ext_resource type="PackedScene" uid="uid://bujqfrt235gm3" path="res://Scenes/collectables/key.tscn" id="15_tjl6l"]
+[ext_resource type="PackedScene" uid="uid://xcg1h7hda3c5" path="res://Scenes/collectables/torch.tscn" id="16_3628d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_d1ilt"]
+sky_material = SubResource("ProceduralSkyMaterial_7u77a")
+
+[sub_resource type="Environment" id="Environment_bo1nx"]
+background_mode = 1
+background_color = Color(0.111669, 0.203123, 4.81308e-08, 1)
+background_energy_multiplier = 3.7
+sky = SubResource("Sky_d1ilt")
+ambient_light_color = Color(0, 0.174474, 0, 1)
+tonemap_mode = 3
+tonemap_exposure = 1.88
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0155351, 0.0772791, 0.0256739, 1)
+fog_light_energy = 0.32
+fog_sun_scatter = 0.57
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 80.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_344ge"]
+plane = Plane(0, -1, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hwvp3"]
+flip_faces = true
+size = Vector2(1000, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_afv7b"]
+size = Vector3(4.405, 3.7, 1)
+
+[sub_resource type="Gradient" id="Gradient_fdnlq"]
+colors = PackedColorArray(1.48905e-07, 0.0832048, 0, 1, 0, 0.827935, 4.62055e-06, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jkdf5"]
+noise_type = 2
+frequency = 0.0014
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hptm8"]
+width = 100
+height = 100
+color_ramp = SubResource("Gradient_fdnlq")
+noise = SubResource("FastNoiseLite_jkdf5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsu2k"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.784314)
+albedo_texture = SubResource("NoiseTexture2D_hptm8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6iyac"]
+material = SubResource("StandardMaterial3D_wsu2k")
+size = Vector2(200, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2mw1"]
+size = Vector3(1, 6.8, 5.9)
+
+[node name="Level_1" type="Node3D"]
+
+[node name="Monster" parent="." instance=ExtResource("1_rb0md")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
+
+[node name="MusicManager" parent="." instance=ExtResource("2_u5ghp")]
+
+[node name="KeyManager" parent="." instance=ExtResource("3_hwvp3")]
+
+[node name="DoorManager" parent="." instance=ExtResource("4_afv7b")]
+
+[node name="GhostManager" parent="." instance=ExtResource("5_7r2dd")]
+
+[node name="TorchManager" parent="." instance=ExtResource("6_k2mw1")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bo1nx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.177578, 0.201037, 0.963354, -0.467404, 0.878683, -0.0972095, 0, 3.71693, -0.857362)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("7_tjl6l")]
+transform = Transform3D(1, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 1, 4.47035e-08, -0.4, -5.4)
+
+[node name="Ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 4.3, -23)
+script = ExtResource("8_u5ghp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+shape = SubResource("WorldBoundaryShape3D_344ge")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
+mesh = SubResource("PlaneMesh_hwvp3")
+
+[node name="Door" parent="." instance=ExtResource("8_3628d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037759, -0.4, -9)
+
+[node name="Door_Body" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -9.2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Body"]
+shape = SubResource("BoxShape3D_afv7b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Door_Body"]
+transform = Transform3D(1, 0, 0, 0, 0.419405, 0.907799, 0, -0.907799, 0.419405, 0, -1.33242, -0.461869)
+shape = SubResource("BoxShape3D_afv7b")
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
+mesh = SubResource("PlaneMesh_6iyac")
+skeleton = NodePath("../..")
+
+[node name="DebugUI" parent="." instance=ExtResource("9_irw6p")]
+visible = false
+
+[node name="Level_Pieces" type="Node3D" parent="."]
+
+[node name="sewer_cap3" parent="Level_Pieces" instance=ExtResource("12_afv7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 0, 19.4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level_Pieces/sewer_cap3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level_Pieces/sewer_cap3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.35)
+shape = SubResource("BoxShape3D_k2mw1")
+
+[node name="sewer_straight" parent="Level_Pieces" instance=ExtResource("11_hwvp3")]
+
+[node name="sewer_cap" parent="Level_Pieces" instance=ExtResource("12_afv7b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -9.3)
+
+[node name="sewer_cap2" parent="Level_Pieces" instance=ExtResource("12_afv7b")]
+transform = Transform3D(-4.37114e-08, -2.03775e-15, 1, 0.88303, -0.469317, 3.85984e-08, 0.469317, 0.88303, 2.05145e-08, -0.6, -1.37981, -8.91841)
+
+[node name="sewer_turn" parent="Level_Pieces" instance=ExtResource("13_k2mw1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.3, 0, 15.81)
+
+[node name="big_area" parent="." instance=ExtResource("14_tjl6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.2, 0, 17.9633)
+
+[node name="Keys" type="Node3D" parent="."]
+
+[node name="Key" parent="Keys" instance=ExtResource("15_tjl6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, 7)
+
+[node name="Key2" parent="Keys" instance=ExtResource("15_tjl6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6, -2.2, 28)
+
+[node name="Key3" parent="Keys" instance=ExtResource("15_tjl6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4, -0.3, 8.2)
+
+[node name="Torches" type="Node3D" parent="."]
+
+[node name="Torch2" parent="Torches" instance=ExtResource("16_3628d")]
+transform = Transform3D(-0.604023, -0.719846, -0.34202, -0.766044, 0.642788, 1.69603e-09, 0.219846, 0.262003, -0.939693, 2.48257, 0.5, 12.2)
+
+[node name="Torch3" parent="Torches" instance=ExtResource("16_3628d")]
+transform = Transform3D(-0.640342, -0.763129, 0.0871556, -0.766044, 0.642788, 3.39206e-09, -0.0560226, -0.0667651, -0.996195, 52.7826, 0, 19.955)

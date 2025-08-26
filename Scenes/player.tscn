@@ -1,27 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgaymsx8kbb4d"]
+[gd_scene load_steps=7 format=3 uid="uid://dgaymsx8kbb4d"]
 
-[ext_resource type="Script" uid="uid://cgqobh3qfv48e" path="res://Scenes/character_body_3d.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://cgqobh3qfv48e" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bkw50ji40dmgx" path="res://Scenes/camera.tscn" id="2_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://clcvcilnhhnse" path="res://assets/ART/torch_mesh.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8gbba"]
+radius = 0.3
+height = 2.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_cvnsp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjgbg"]
-radius = 0.25
-height = 1.0
+radius = 0.3
+height = 2.2
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_cvnsp")
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0180255, 0)
 
 [node name="Camera3D" parent="Head" instance=ExtResource("2_cvnsp")]
 unique_name_in_owner = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="TorchMesh" parent="Head" instance=ExtResource("3_6t5aa")]
+unique_name_in_owner = true
+transform = Transform3D(0.0772741, 0.0179315, -0.0103528, -0.014641, 0.0756048, 0.0216693, 0.014641, -0.0190362, 0.0763103, 0.446774, -0.5, -0.484051)
 visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.018, 2.13)
+light_color = Color(0.281452, 0.329865, 0.0593228, 1)
+light_energy = 8.208
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.008
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_8gbba")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_cvnsp")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("CapsuleShape3D_jjgbg")

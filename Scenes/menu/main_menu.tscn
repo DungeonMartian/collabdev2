@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dplgtgmxecdt5"]
+[gd_scene load_steps=20 format=3 uid="uid://dplgtgmxecdt5"]
 
-[ext_resource type="PackedScene" uid="uid://clu4hmwr8rwwt" path="res://ART/modular_sewers.tscn" id="1_0336k"]
+[ext_resource type="PackedScene" uid="uid://clu4hmwr8rwwt" path="res://assets/ART/modular_sewers.tscn" id="1_0336k"]
 [ext_resource type="Script" uid="uid://bijc13djidhxe" path="res://Scripts/main_menu.gd" id="1_ygw4n"]
 [ext_resource type="PackedScene" uid="uid://bqvb1itemejx" path="res://Scenes/menu/audio/audio_menu.tscn" id="2_655o3"]
-[ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager/ghost_manager.tscn" id="2_ufr4i"]
+[ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager.tscn" id="2_ufr4i"]
 [ext_resource type="PackedScene" uid="uid://de1268dq5fbj7" path="res://assets/ART/monster_character.blend" id="3_uffod"]
+[ext_resource type="PackedScene" uid="uid://dok4vbtgbdle4" path="res://Scenes/managers/torch_manager.tscn" id="6_kwgaw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ufr4i"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -189,26 +190,20 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.84191, 1.93269, -1
 bones/1/rotation = Quaternion(3.59144e-07, 1.1515e-08, 0.959461, -0.281841)
 bones/2/rotation = Quaternion(0.567519, 4.30592e-08, 0.0490677, 0.821897)
 bones/2/scale = Vector3(0.913543, 1.19823, 0.913543)
-bones/5/scale = Vector3(1, 1, 1)
 bones/6/position = Vector3(3.74959, 8.40874, 5.61615)
 bones/6/rotation = Quaternion(0.0174816, 0.756628, 0.651366, 0.0541394)
 bones/8/rotation = Quaternion(0.565812, -5.89229e-08, -0.0658425, 0.821901)
 bones/8/scale = Vector3(0.886079, 1.27367, 0.886079)
 bones/9/position = Vector3(-3.99572, 8.40874, 5.95178)
 bones/9/rotation = Quaternion(-0.0281268, 0.757412, 0.650993, -0.041764)
-bones/10/scale = Vector3(1, 1, 1)
 bones/11/position = Vector3(-4.37114e-08, 6.27662, -0.786574)
 bones/11/rotation = Quaternion(-1.88079e-37, 1.40345e-15, 1.40345e-15, 1)
-bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(-4.37114e-08, 5.01092, -0.786574)
 bones/12/rotation = Quaternion(-1.88079e-37, -1.40345e-15, -1.40345e-15, 1)
-bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-4.37114e-08, 3.74521, -0.786574)
-bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(-4.37114e-08, 2.47951, -0.786575)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-4.37114e-08, 1.2138, -0.786574)
-bones/15/scale = Vector3(1, 1, 1)
 bones/16/rotation = Quaternion(4.47706e-07, 3.46395e-07, 0.959461, -0.28184)
 bones/16/scale = Vector3(0.913543, 1.19823, 0.913543)
 bones/17/position = Vector3(3.76129, 5.49462, 3.69378)
@@ -242,6 +237,8 @@ bones/26/scale = Vector3(0.886079, 1.27367, 0.886078)
 bones/27/position = Vector3(-2.85868, 6.20517, -0.479277)
 bones/27/rotation = Quaternion(0.0147631, 0.288183, 0.912732, 0.289229)
 bones/27/scale = Vector3(0.886079, 1.27367, 0.886078)
+
+[node name="TorchManager" parent="." instance=ExtResource("6_kwgaw")]
 
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
