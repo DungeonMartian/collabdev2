@@ -10,20 +10,27 @@ var _shake_intensity : float = 0.
 
 @onready var chromatic_abberation: ColorRect = $chromatic_abberation
 @onready var gaus: ColorRect = $gaus
-@onready var grain_pp: ColorRect = $grain_pp
+
 @onready var vignette: ColorRect = $vignette
 
 
 @onready var evil_lens_array : Array = [
 	chromatic_abberation,
 	gaus,
-	grain_pp,
 	vignette
 ]
 
 func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
+	GhostManager.ref.danger_level_changed.connect(_on_danger_level_changed)
 	#start_evil_lens()
+
+func _on_danger_level_changed(level : int) -> void:
+	if level == 5:
+		start_evil_lens()
+	else:
+		reset_evil_lens()
+
 
 func shake_screen(intensity : float, duration : float) -> void:
 	_should_shake = true
@@ -47,6 +54,9 @@ func start_evil_lens() -> void:
 	lens.start_lens()
 	lens.show()
 
+func reset_evil_lens() -> void:
+	for i : BaseLens in evil_lens_array:
+		i.reset_lens()
 
 func _on_timer_timeout() -> void:
 	_should_shake = false

@@ -1,0 +1,6 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cmhyg8ob4qqoi"]
+
+[resource]
+emission_shape = 2
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 1, 0)

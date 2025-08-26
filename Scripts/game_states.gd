@@ -1,7 +1,7 @@
 extends Node
 
 var state: states
-enum states {GAMEPLAY,PAUSED}
+enum states {GAMEPLAY,PAUSED, MAIN_MENU}
 
 func _ready() -> void:
 	set_process_mode(Node.PROCESS_MODE_ALWAYS)
@@ -24,4 +24,8 @@ func change_state(new_state: states) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		states.PAUSED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		states.MAIN_MENU:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		_:
+			print("null state?")
 	
