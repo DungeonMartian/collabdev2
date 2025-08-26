@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xcg1h7hda3c5"]
+[gd_scene load_steps=6 format=3 uid="uid://xcg1h7hda3c5"]
 
 [ext_resource type="Script" uid="uid://cxlcdeghxg3ad" path="res://Scripts/torch.gd" id="1_cpe0b"]
+[ext_resource type="PackedScene" uid="uid://clcvcilnhhnse" path="res://assets/ART/torch_mesh.tscn" id="2_ansgw"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cpe0b"]
 
@@ -13,8 +14,12 @@ radius = 1.185
 [node name="Torch" type="Area3D"]
 script = ExtResource("1_cpe0b")
 
+[node name="torch" parent="." instance=ExtResource("2_ansgw")]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
+
 [node name="TorchMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_cpe0b")
 surface_material_override/0 = SubResource("StandardMaterial3D_ansgw")
 

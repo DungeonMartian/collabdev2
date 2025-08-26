@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://cest5kjvk5ew4"]
 
-[ext_resource type="PackedScene" uid="uid://bpu17mlgxvlhb" path="res://ART/key.glb" id="1_cby7l"]
+[ext_resource type="PackedScene" uid="uid://dvjkjslya7lya" path="res://assets/ART/key.glb" id="1_cby7l"]
 
 [node name="key" instance=ExtResource("1_cby7l")]

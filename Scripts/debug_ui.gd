@@ -15,6 +15,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	if OS.is_debug_build():
+		setup_lyzs_audio()
 		GhostManager.ref.danger_level_changed.connect(_on_danger_level_changed)
 	else:
 		visible = false
@@ -29,3 +30,8 @@ func _on_danger_level_changed(level: int) -> void:
 
 func _process(_delta: float) -> void:
 	progress_danger_percent.value = GhostManager.ref.get_danger_percentage()
+
+func setup_lyzs_audio() -> void:
+	for device in AudioServer.get_output_device_list():
+		if device == "CABLE Input (VB-Audio Virtual Cable)":
+			AudioServer.set_output_device(device)
