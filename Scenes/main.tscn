@@ -16,14 +16,14 @@
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Sky" id="Sky_jjgbg"]
+[sub_resource type="Sky" id="Sky_d1ilt"]
 sky_material = SubResource("ProceduralSkyMaterial_7u77a")
 
 [sub_resource type="Environment" id="Environment_bo1nx"]
 background_mode = 1
 background_color = Color(0.111669, 0.203123, 4.81308e-08, 1)
 background_energy_multiplier = 3.7
-sky = SubResource("Sky_jjgbg")
+sky = SubResource("Sky_d1ilt")
 ambient_light_color = Color(0, 0.174474, 0, 1)
 tonemap_mode = 3
 tonemap_exposure = 1.88
@@ -45,33 +45,33 @@ size = Vector2(100, 300)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_344ge"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ynf5e"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6iyac"]
 color_ramp = SubResource("Gradient_6bp64")
 noise = SubResource("FastNoiseLite_344ge")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hptm8"]
-albedo_texture = SubResource("NoiseTexture2D_ynf5e")
+albedo_texture = SubResource("NoiseTexture2D_6iyac")
 
-[sub_resource type="Gradient" id="Gradient_344ge"]
+[sub_resource type="Gradient" id="Gradient_fdnlq"]
 colors = PackedColorArray(1.48905e-07, 0.0832048, 0, 1, 0, 0.827935, 4.62055e-06, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ynf5e"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jkdf5"]
 noise_type = 2
 frequency = 0.0014
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hptm8"]
 width = 100
 height = 100
-color_ramp = SubResource("Gradient_344ge")
-noise = SubResource("FastNoiseLite_ynf5e")
+color_ramp = SubResource("Gradient_fdnlq")
+noise = SubResource("FastNoiseLite_jkdf5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1ilt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsu2k"]
 transparency = 1
 albedo_color = Color(0, 1, 0, 0.784314)
 albedo_texture = SubResource("NoiseTexture2D_hptm8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6iyac"]
-material = SubResource("StandardMaterial3D_d1ilt")
+material = SubResource("StandardMaterial3D_wsu2k")
 size = Vector2(100, 100)
 
 [node name="Node3D" type="Node3D"]
