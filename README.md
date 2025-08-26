@@ -1,5 +1,14 @@
-# collabdev2
-Live HyperGameDev collab Number 2! With DungeonMartian and Rogi's Tutorials
+# Main Credits
+Lýz + DungeonMartian + Rogi's Tutorials
+
+# Other Credits
+InsaneAlphaBeta - MUSIC!!!
+Phlip45 - Key
+Yha
+PawnXpawn
+
+# NOTE:
+Very much a work in progress.
 
 
 <li>Keys</li>
