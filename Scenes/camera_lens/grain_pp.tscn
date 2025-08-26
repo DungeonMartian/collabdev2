@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://4pmcv8v2en14"]
+
+[ext_resource type="Shader" uid="uid://btaptx75nv40i" path="res://assets/shaders/grain_pp.gdshader" id="1_oauha"]
+[ext_resource type="Script" uid="uid://dcbs0lip3qn48" path="res://Scripts/grain_pp.gd" id="2_kw2kj"]
+
+[sub_resource type="Gradient" id="Gradient_mhsga"]
+offsets = PackedFloat32Array(0, 0.614754, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.713726, 0.945098, 1, 0.419608, 0.203922, 0.792157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xfji6"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_mhsga")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gbba"]
+resource_local_to_scene = true
+shader = ExtResource("1_oauha")
+shader_parameter/pixel = 1.0
+shader_parameter/pallete = SubResource("GradientTexture1D_xfji6")
+
+[node name="grain_pp" type="ColorRect"]
+material = SubResource("ShaderMaterial_8gbba")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kw2kj")
