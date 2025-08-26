@@ -10,12 +10,15 @@
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_cvnsp")
 
+[node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" parent="Head" instance=ExtResource("2_cvnsp")]
+unique_name_in_owner = true
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_8gbba")
-
-[node name="Camera3D" parent="." instance=ExtResource("2_cvnsp")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5063, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_jjgbg")
