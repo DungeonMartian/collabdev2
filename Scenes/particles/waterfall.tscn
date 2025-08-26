@@ -5,8 +5,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r24el"]
 material = ExtResource("2_fshbh")
-radius = 0.01
-height = 0.05
+radius = 0.05
+height = 0.1
 
 [node name="Waterfall" type="GPUParticles3D"]
 amount = 16

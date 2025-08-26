@@ -10,14 +10,13 @@ var _shake_intensity : float = 0.
 
 @onready var chromatic_abberation: ColorRect = $chromatic_abberation
 @onready var gaus: ColorRect = $gaus
-@onready var grain_pp: ColorRect = $grain_pp
+
 @onready var vignette: ColorRect = $vignette
 
 
 @onready var evil_lens_array : Array = [
 	chromatic_abberation,
 	gaus,
-	grain_pp,
 	vignette
 ]
 
