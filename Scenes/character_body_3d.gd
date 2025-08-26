@@ -4,11 +4,15 @@ static var ref: CharacterBody3D
 
 <<<<<<< Updated upstream
 const SPEED: float = 15.
+<<<<<<< HEAD
 const JUMP_VELOCITY: float = 4.5
 =======
 const SPEED: float = 5.
 const JUMP_VELOCITY: float = 6.5
 >>>>>>> Stashed changes
+=======
+const JUMP_VELOCITY: float = 6.5
+>>>>>>> dc4870f9ef5bb9440bd300ff13413a83091758e0
 
 const ROTATE_FACTOR: float = 4.
 const ROTATE_SPEED: float = 1.
