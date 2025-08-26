@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dok4vbtgbdle4"]
+
+[ext_resource type="Script" uid="uid://7utijowxy168" path="res://Scripts/torch_manager.gd" id="1_tbqi7"]
+
+[node name="TorchManager" type="Node"]
+script = ExtResource("1_tbqi7")

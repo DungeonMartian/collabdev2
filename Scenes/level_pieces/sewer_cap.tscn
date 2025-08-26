@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c43ty2buebilt"]
+
+[ext_resource type="PackedScene" uid="uid://bwgqdx4wkrqy3" path="res://assets/ART/level_pieces_blend_files/sewer_cap.blend" id="1_oc33o"]
+[ext_resource type="Material" uid="uid://7qdywpyhoed8" path="res://assets/ART/materials/modular_sewers.tres" id="2_81j5a"]
+[ext_resource type="Script" path="res://Scripts/sewer_fx.gd" id="3_e6gww"]
+
+[node name="sewer_cap" instance=ExtResource("1_oc33o")]
+
+[node name="SewerCap" parent="." index="0"]
+material_override = ExtResource("2_81j5a")
+script = ExtResource("3_e6gww")

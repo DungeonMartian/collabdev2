@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqb3h544nlev"]
+
+[ext_resource type="PackedScene" uid="uid://clu4hmwr8rwwt" path="res://assets/ART/modular_sewers.tscn" id="1_inmlr"]
+[ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager.tscn" id="2_oefor"]
+
+[node name="Modular Sewers" instance=ExtResource("1_inmlr")]
+
+[node name="GhostManager" parent="." index="5" instance=ExtResource("2_oefor")]
