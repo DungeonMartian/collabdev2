@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dno1spmxecgxg"]
 
-[ext_resource type="Script" uid="uid://dvmni2os3qbjn" path="res://Scripts/key_manager.gd" id="1_6xwi3"]
+[ext_resource type="Script" path="res://Scripts/key_manager.gd" id="1_6xwi3"]
 
 [node name="KeyManager" type="Node"]
 script = ExtResource("1_6xwi3")

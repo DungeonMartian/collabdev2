@@ -24,17 +24,16 @@ var _danger_percentage : float = 0.0:
 	get:
 		return _danger_percentage
 	set(val):
+		if val <= 0.0:
+			return
 		if val >= 100.0:
 			_danger_percentage = 0
 			increase_danger_level()
 			return
 		_danger_percentage = val
 
-## Does the player have a torch. do not call directly
-var _has_torch : bool = false
-
 ## the rate modified by delta that the danger percentage increases over time
-var _danger_increase_rate : float = 10
+var _danger_increase_rate : float = 10.
 
 func get_danger_percentage() -> float:
 	return _danger_percentage
@@ -54,19 +53,11 @@ func get_danger_level() -> int:
 func increase_danger_level() -> void:
 	_danger_level = _danger_level+1
 
-## call this when the player gets a torch
-func get_torch() -> void:
-	_has_torch = true
-
-## call this when the player loses the torch
-func lose_torch() -> void:
-	_has_torch = false
-
 func _process(delta: float) -> void:
 	if _danger_level >= 5:
 		_danger_percentage = 0.
 		return
-	if ! _has_torch:
+	if not TorchManager.ref.has_torch():
 		_danger_percentage += _danger_increase_rate * delta
 		return
 	

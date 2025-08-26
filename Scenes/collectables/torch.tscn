@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://xcg1h7hda3c5"]
+[gd_scene load_steps=5 format=3 uid="uid://xcg1h7hda3c5"]
 
 [ext_resource type="Script" uid="uid://cxlcdeghxg3ad" path="res://Scripts/torch.gd" id="1_cpe0b"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_cpe0b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ansgw"]
+albedo_color = Color(0.341176, 0.168627, 0.133333, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cpe0b"]
+radius = 1.185
+
 [node name="Torch" type="Area3D"]
 script = ExtResource("1_cpe0b")
+
+[node name="TorchMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 0, 0)
+mesh = SubResource("CylinderMesh_cpe0b")
+surface_material_override/0 = SubResource("StandardMaterial3D_ansgw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_cpe0b")
