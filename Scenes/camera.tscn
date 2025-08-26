@@ -1,19 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4yuqq2ibl2jo"]
+[gd_scene load_steps=10 format=3 uid="uid://bkw50ji40dmgx"]
 
-[ext_resource type="Shader" uid="uid://djds6rv28bim4" path="res://assets/shaders/wiggle.gdshader" id="1_375tr"]
+[ext_resource type="Script" uid="uid://dps4ooqtgt0vo" path="res://Scripts/camera.gd" id="1_f1cf7"]
+[ext_resource type="Shader" uid="uid://btaptx75nv40i" path="res://assets/shaders/grain_pp.gdshader" id="2_f1cf7"]
+[ext_resource type="PackedScene" uid="uid://di561li87j6t6" path="res://Scenes/camera_lens/chromatic_abberation.tscn" id="2_pqp4w"]
+[ext_resource type="PackedScene" uid="uid://bh7uuhulwimqs" path="res://Scenes/camera_lens/gaus.tscn" id="3_7o1f6"]
+[ext_resource type="PackedScene" uid="uid://4pmcv8v2en14" path="res://Scenes/camera_lens/grain_pp.tscn" id="4_c66t7"]
+[ext_resource type="PackedScene" uid="uid://bk8ipojq0ldp" path="res://Scenes/camera_lens/vignette.tscn" id="6_3he0p"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gbba"]
-shader = ExtResource("1_375tr")
-shader_parameter/Strength = 5.0
-shader_parameter/RandomOffset = 1.0
+[sub_resource type="Gradient" id="Gradient_mhsga"]
+offsets = PackedFloat32Array(0, 0.614754, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.713726, 0.945098, 1, 0.419608, 0.203922, 0.792157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gpm26"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_mhsga")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3uemn"]
+resource_local_to_scene = true
+shader = ExtResource("2_f1cf7")
+shader_parameter/pixel = 1.0
+shader_parameter/pallete = SubResource("GradientTexture1D_gpm26")
 
 [node name="Camera3D" type="Camera3D"]
+script = ExtResource("1_f1cf7")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="chromatic_abberation" parent="." instance=ExtResource("2_pqp4w")]
 visible = false
-material = SubResource("ShaderMaterial_8gbba")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[node name="gaus" parent="." instance=ExtResource("3_7o1f6")]
+visible = false
+
+[node name="grain_pp" parent="." instance=ExtResource("4_c66t7")]
+visible = false
+material = SubResource("ShaderMaterial_3uemn")
+
+[node name="vignette" parent="." instance=ExtResource("6_3he0p")]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
