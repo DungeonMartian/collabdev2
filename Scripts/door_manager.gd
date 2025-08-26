@@ -19,6 +19,8 @@ var _locks_remaining : int = 3:
 		if _locks_remaining == 0:
 			open_main_gate()
 
+func get_locks_remaining() -> int:
+	return _locks_remaining
 
 func unlock_door() -> void:
 	KeyManager.ref.key_count -= 1

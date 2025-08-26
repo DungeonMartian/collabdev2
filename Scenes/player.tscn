@@ -1,27 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgaymsx8kbb4d"]
+[gd_scene load_steps=7 format=3 uid="uid://dgaymsx8kbb4d"]
 
 [ext_resource type="Script" uid="uid://cgqobh3qfv48e" path="res://Scenes/character_body_3d.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bkw50ji40dmgx" path="res://Scenes/camera.tscn" id="2_cvnsp"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_cvnsp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t5aa"]
+albedo_color = Color(0.341176, 0.168627, 0.133333, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8gbba"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjgbg"]
-radius = 0.25
-height = 1.0
+radius = 0.3
+height = 2.2
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_cvnsp")
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0180255, 0)
 
 [node name="Camera3D" parent="Head" instance=ExtResource("2_cvnsp")]
 unique_name_in_owner = true
+
+[node name="TorchMesh" type="MeshInstance3D" parent="Head"]
+unique_name_in_owner = true
+transform = Transform3D(0.453985, 0.105348, -0.0608225, 0, 0.235, 0.407032, 0.121645, -0.393163, 0.226993, 0.5, -0.418025, -0.6)
+visible = false
+mesh = SubResource("CylinderMesh_cvnsp")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6t5aa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("CapsuleMesh_8gbba")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("CapsuleShape3D_jjgbg")

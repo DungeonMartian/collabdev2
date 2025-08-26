@@ -2,7 +2,7 @@ class_name Player extends CharacterBody3D
 
 static var ref: CharacterBody3D
 
-const SPEED: float = 15.
+const SPEED: float = 5.
 const JUMP_VELOCITY: float = 6.5
 
 const ROTATE_FACTOR: float = 4.
@@ -12,6 +12,7 @@ const ROTATE_VERTICAL_CLAMP: float = 1.5
 
 @onready var head: Node3D = %Head
 @onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var torch_mesh: MeshInstance3D = %TorchMesh
 
 func _init() -> void:
 	ref = self
@@ -24,6 +25,9 @@ func _input(_event: InputEvent) -> void:
 	
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
+	
+func torch_visibility(show_torch: bool) -> void:
+	torch_mesh.visible = show_torch
 	
 func _handle_movement(delta:float) -> void:
  
