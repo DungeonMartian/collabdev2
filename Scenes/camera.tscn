@@ -1,7 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkw50ji40dmgx"]
 
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="1_f1cf7"]
+
 [ext_resource type="Shader" path="res://assets/shaders/grain_pp.gdshader" id="2_f1cf7"]
+[ext_resource type="Shader" uid="uid://btaptx75nv40i" path="res://assets/shaders/grain_pp.gdshader" id="2_f1cf7"]
+
 [ext_resource type="PackedScene" uid="uid://di561li87j6t6" path="res://Scenes/camera_lens/chromatic_abberation.tscn" id="2_pqp4w"]
 [ext_resource type="PackedScene" uid="uid://bh7uuhulwimqs" path="res://Scenes/camera_lens/gaus.tscn" id="3_7o1f6"]
 [ext_resource type="PackedScene" uid="uid://4pmcv8v2en14" path="res://Scenes/camera_lens/grain_pp.tscn" id="4_c66t7"]
