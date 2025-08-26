@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://57e1m1qmfecs"]
+[gd_scene load_steps=14 format=3 uid="uid://57e1m1qmfecs"]
 
+[ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager/ghost_manager.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dgaymsx8kbb4d" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://4br7n1u8e7hj" path="res://Scenes/debug_ui.tscn" id="2_bo1nx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -33,6 +35,8 @@ noise = SubResource("FastNoiseLite_344ge")
 albedo_texture = SubResource("NoiseTexture2D_ynf5e")
 
 [node name="Node3D" type="Node3D"]
+
+[node name="GhostManager" parent="." instance=ExtResource("1_8gbba")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bo1nx")
@@ -84,3 +88,5 @@ transform = Transform3D(4.37114e-08, 1, -1.19209e-07, 1, -4.37114e-08, 0, -3.552
 mesh = SubResource("PlaneMesh_21xkr")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_hptm8")
+
+[node name="DebugUI" parent="." instance=ExtResource("2_bo1nx")]
