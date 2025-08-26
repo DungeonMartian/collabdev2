@@ -1,17 +1,5 @@
-# Latest build:
-https://hypergamedev.itch.io/spooky-sewer-game
-
-# Main Credits
-Lýz + DungeonMartian + Rogi's Tutorials
-
-# Other Credits
-InsaneAlphaBeta - MUSIC!!!
-Phlip45 - Key
-Yha
-PawnXpawn
-
-# NOTE:
-Very much a work in progress.
+# collabdev2
+Live HyperGameDev collab Number 2! With DungeonMartian and Rogi's Tutorials
 
 
 <li>Keys</li>

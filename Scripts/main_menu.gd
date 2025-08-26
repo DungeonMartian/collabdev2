@@ -15,7 +15,6 @@ func _on_play_button_pressed() -> void:
 	#TODO start the game somehow
 	# you can change this if you want
 	GameStates.change_state(GameStates.states.GAMEPLAY)
-	GhostManager.ref.set_danger_level(0)
 	get_tree().call_deferred("change_scene_to_file","res://Scenes/main.tscn")
 
 

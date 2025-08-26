@@ -5,8 +5,6 @@ static var ref : GhostManager
 
 signal danger_level_changed(level: int)
 
-var _has_torch: bool = false
-
 func _init() -> void: 
 	ref = self
 
@@ -26,25 +24,23 @@ var _danger_percentage : float = 0.0:
 	get:
 		return _danger_percentage
 	set(val):
-		if val <= 0.0:
-			return
 		if val >= 100.0:
 			_danger_percentage = 0
 			increase_danger_level()
 			return
 		_danger_percentage = val
 
+## Does the player have a torch. do not call directly
+var _has_torch : bool = false
+
 ## the rate modified by delta that the danger percentage increases over time
-var _danger_increase_rate : float = 10.
+var _danger_increase_rate : float = 10
 
 func get_danger_percentage() -> float:
 	return _danger_percentage
 	
 func set_danger_percentage(percent: float) -> void:
 	_danger_percentage = percent
-
-func update_torch(torch_acquired:bool) -> void:
-	_has_torch = torch_acquired
 
 ## used to set danger val to a specific value. can be called by ghost encounters, or by getting key
 func set_danger_level(level : int) -> void:
@@ -58,11 +54,19 @@ func get_danger_level() -> int:
 func increase_danger_level() -> void:
 	_danger_level = _danger_level+1
 
+## call this when the player gets a torch
+func get_torch() -> void:
+	_has_torch = true
+
+## call this when the player loses the torch
+func lose_torch() -> void:
+	_has_torch = false
+
 func _process(delta: float) -> void:
 	if _danger_level >= 5:
 		_danger_percentage = 0.
 		return
-	if not _has_torch:
+	if ! _has_torch:
 		_danger_percentage += _danger_increase_rate * delta
 		return
 	

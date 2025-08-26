@@ -1,8 +1,6 @@
 extends Area3D
 class_name Monster
 
-const SPEED: float = 10.
-
 const MONSTER_NOISE : FastNoiseLite = preload("res://Scenes/monster/monster_noise.tres")
 @onready var animation_player: AnimationPlayer = $monster_character/AnimationPlayer
 
@@ -34,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	
-	global_position = global_position.move_toward(Player.ref.global_position, delta*SPEED)
+	global_position = global_position.move_toward(Player.ref.global_position, delta*5)
 
 
 func _on_body_entered(body: Node3D) -> void:

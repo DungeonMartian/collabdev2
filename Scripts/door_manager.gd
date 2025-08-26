@@ -2,6 +2,8 @@ class_name DoorManager extends Node
 
 static var ref : DoorManager 
 
+
+
 func _init() -> void: 
 	ref = self
 
@@ -17,12 +19,11 @@ var _locks_remaining : int = 3:
 		if _locks_remaining == 0:
 			open_main_gate()
 
-func get_locks_remaining() -> int:
-	return _locks_remaining
 
 func unlock_door() -> void:
 	KeyManager.ref.key_count -= 1
-	_locks_remaining -= 1
+	_locks_remaining -=1
+
 
 func open_main_gate() -> void:
 	print("door unlocked!")

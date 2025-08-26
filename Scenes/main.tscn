@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=26 format=3 uid="uid://57e1m1qmfecs"]
 
 [ext_resource type="PackedScene" uid="uid://c3c5nilknqmsm" path="res://Scenes/managers/ghost_manager/ghost_manager.tscn" id="1_8gbba"]
@@ -161,11 +160,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.945009, 4.39883, -6.52496)
 
 [node name="Smoke" parent="particles" instance=ExtResource("11_d1ilt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285203, 3.19394, -14.8112)
-
-[gd_scene load_steps=2 format=3 uid="uid://57e1m1qmfecs"]
-
-[ext_resource type="PackedScene" uid="uid://btlsyqis3ila" path="res://Scenes/Levels/level_1.tscn" id="1_jjgbg"]
-
-[node name="Main" type="Node3D"]
-
-[node name="Level_1" parent="." instance=ExtResource("1_jjgbg")]
