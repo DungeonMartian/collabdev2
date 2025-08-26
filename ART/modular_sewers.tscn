@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://clu4hmwr8rwwt"]
+[gd_scene load_steps=11 format=3 uid="uid://clu4hmwr8rwwt"]
 
 [ext_resource type="PackedScene" uid="uid://ci2iqo0ke22it" path="res://ART/Modular Sewers.blend" id="1_2gk1t"]
 [ext_resource type="Script" uid="uid://cegxwr3xl20yf" path="res://ART/modular_sewers.gd" id="2_ab61e"]
@@ -8,6 +8,21 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xcyyk"]
 height = 1.29199
 radius = 2.86377
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8c73"]
+size = Vector3(11.7406, 1, 33.0234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcyyk"]
+size = Vector3(14.2803, 1, 33.0234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bex55"]
+size = Vector3(43.4417, 1, 33.0234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cqlpg"]
+size = Vector3(42.2764, 1, 33.0234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvt2m"]
+size = Vector3(45.6689, 1, 33.0234)
 
 [node name="Modular Sewers" instance=ExtResource("1_2gk1t")]
 script = ExtResource("2_ab61e")
@@ -33,10 +48,55 @@ material_override = ExtResource("3_2rgg1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161848, -0.18119, -0.00359535)
 shape = SubResource("CylinderShape3D_xcyyk")
 
-[node name="SewerT_001" parent="." index="3"]
+[node name="SewerT" parent="." index="3"]
 material_override = ExtResource("3_2rgg1")
 
-[node name="TCollision " parent="SewerT_001" index="1"]
+[node name="TCollision " parent="SewerT" index="1"]
 mesh = null
 
 [node name="GhostManager" parent="." index="4" instance=ExtResource("10_2rgg1")]
+
+[node name="BigRoom" parent="." index="5"]
+material_override = ExtResource("3_2rgg1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BigRoom" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="0"]
+transform = Transform3D(0.986426, -0.164204, 0, 0.164204, 0.986426, 0, 0, 0, 1, 15.7957, -2.63694, -1.04523)
+shape = SubResource("BoxShape3D_l8c73")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="1"]
+transform = Transform3D(-0.986426, 0.164204, 8.74228e-08, 0.164204, 0.986426, 0, -8.62361e-08, 1.43552e-08, -1, -15.3787, -2.63694, -1.04523)
+shape = SubResource("BoxShape3D_l8c73")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="2"]
+transform = Transform3D(-1, -0.00062833, 8.62271e-08, -0.00062833, 1, 1.44094e-08, -8.62361e-08, 1.43552e-08, -1, -0.394461, -3.68891, -1.04523)
+shape = SubResource("BoxShape3D_xcyyk")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="3"]
+transform = Transform3D(-1, -0.00062833, 8.62271e-08, 8.62636e-08, -5.80666e-08, 1, -0.00062833, 1, 5.81207e-08, -0.394461, -3.68891, 15.1031)
+shape = SubResource("BoxShape3D_bex55")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="4"]
+transform = Transform3D(-1, -0.00062833, 8.62271e-08, 8.62636e-08, -5.80666e-08, 1, -0.00062833, 1, 5.81207e-08, -0.394461, -3.68891, -17.58)
+shape = SubResource("BoxShape3D_cqlpg")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="5"]
+transform = Transform3D(0.000628374, -1, -5.81208e-08, 8.62636e-08, -5.80666e-08, 1, -1, -0.000628374, 8.62271e-08, 21.2028, -3.6889, -10.2067)
+shape = SubResource("BoxShape3D_xcyyk")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="6"]
+transform = Transform3D(0.000628374, -1, -5.81208e-08, 8.62636e-08, -5.80666e-08, 1, -1, -0.000628374, 8.62271e-08, 21.2032, -3.6889, 8.58201)
+shape = SubResource("BoxShape3D_xcyyk")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="7"]
+transform = Transform3D(0.000628374, -1, -5.81208e-08, 8.62636e-08, -5.80666e-08, 1, -1, -0.000628374, 8.62271e-08, -21.252, -3.6889, -10.1136)
+shape = SubResource("BoxShape3D_xcyyk")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="8"]
+transform = Transform3D(0.000628374, -1, -5.81208e-08, 8.62636e-08, -5.80666e-08, 1, -1, -0.000628374, 8.62271e-08, -21.4565, -3.6889, 8.41948)
+shape = SubResource("BoxShape3D_xcyyk")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="BigRoom/StaticBody3D" index="9"]
+transform = Transform3D(-1, -0.00062833, 8.62271e-08, 0.00062833, -1, -1.01832e-07, 8.6291e-08, -1.01778e-07, 1, -0.394461, 4.23053, -1.11393)
+shape = SubResource("BoxShape3D_kvt2m")
